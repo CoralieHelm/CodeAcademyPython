@@ -27,3 +27,15 @@ def get_boundaries(target, margin):
   return low_limit, high_limit
 
 low, high = get_boundaries(100,20)
+
+
+# 10/11 Scope
+# Understanding scopes by placing variable definition outside function
+
+current_year = 2048
+
+def calculate_age(birth_year):
+  age = current_year - birth_year
+  return age
+
+print (calculate_age(1970))
