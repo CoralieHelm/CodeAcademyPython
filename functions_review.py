@@ -88,13 +88,10 @@ Print the string "The GE train does X Joules of work over Y meters.", with X rep
 '''
 
 
-
 train_mass = 22680
 train_acceleration = 10
 train_distance = 100
 bomb_mass = 1
-
-
 
 #1
 def f_to_c(f_temp):
@@ -114,3 +111,33 @@ def c_to_f(c_temp):
 c0_in_fahrenheit = c_to_f(0)
 print(c0_in_fahrenheit)
 
+#5 
+def get_force(mass, acceleration):
+  return mass * acceleration
+
+#6
+train_force = get_force(train_mass, train_acceleration)
+
+#7
+print("The GE trains supplies", train_force, "Newtons of force.")
+
+#8
+def get_engery(mass, c = (3*10**8)):
+  return mass * (c**2)
+
+#9
+bomb_energy = get_engery(bomb_mass)
+
+#10
+print("A 1kg bomb supplies", bomb_energy, "Joules.")
+
+#11
+def get_work(mass, acceleration, distance):
+  force = get_force(mass, acceleration)
+  return force * distance
+
+#12 
+train_work = get_work(train_mass, train_acceleration,train_distance)
+
+#12
+print("The GE train does", train_work, "Joules of work over", train_distance, "meters.")
